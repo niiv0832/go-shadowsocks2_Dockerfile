@@ -8,5 +8,5 @@ Link on github: <a href="https://www.github.com/niiv0832/go-shadowsocks2_Dockerf
 ## Usage
 
 ```shell
-docker run -d --name=ssgo -p `YOU_PORT`:7780 niiv0832/go-shadowsocks2:latest -u -s 'ss://AEAD_CHACHA20_POLY1305:`YOUR_PASSWORD`@:7780' -verbose
+docker run -d --name=ssgo -p `YOU_PORT`:7780 -t niiv0832/go-shadowsocks2:latest -u -s 'ss://AEAD_CHACHA20_POLY1305:`YOUR_PASSWORD`@:7780' -verbose
 ```
