@@ -2,7 +2,7 @@
 ###############################################################################
 # BUILD STAGE
 #
-FROM golang:1.13-alpine
+FROM golang:1.15-alpine
 #
 RUN set -x && \
     apk --no-cache --update add \
@@ -13,11 +13,11 @@ RUN set -x && \
     make \
     upx && \
  #   
-    mkdir -p /src && \
-    cd /src/ && \
-    git clone https://github.com/shadowsocks/go-shadowsocks2.git && \
-    cd /src/go-shadowsocks2/ && \ 
-    make -j 4 linux && \
+    mkdir -p /src
+    cd /src/
+    git clone https://github.com/shadowsocks/go-shadowsocks2.git 
+    cd /src/go-shadowsocks2/ 
+    make -j 4 linux
     upx --ultra-brute -qq /src/go-shadowsocks2/bin/shadowsocks2-linux
 
 ###############################################################################
