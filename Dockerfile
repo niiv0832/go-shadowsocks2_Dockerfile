@@ -11,14 +11,14 @@ RUN set -x && \
     curl \
     git \
     make \
-    upx && \
+    upx
  #   
-    mkdir -p /src
-    cd /src/
-    git clone https://github.com/shadowsocks/go-shadowsocks2.git 
-    cd /src/go-shadowsocks2/ 
-    make -j 4 linux
-    upx --ultra-brute -qq /src/go-shadowsocks2/bin/shadowsocks2-linux
+RUN    mkdir -p /src
+RUN    cd /src/
+RUN    git clone https://github.com/shadowsocks/go-shadowsocks2.git 
+RUN    cd /src/go-shadowsocks2/ 
+RUN    make -j 4 linux
+RUN    upx --ultra-brute -qq /src/go-shadowsocks2/bin/shadowsocks2-linux
 
 ###############################################################################
 # PACKAGE STAGE
