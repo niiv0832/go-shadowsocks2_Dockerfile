@@ -18,7 +18,7 @@ RUN set -x && \
     git clone https://github.com/shadowsocks/go-shadowsocks2.git && \
     cd /src/go-shadowsocks2/ && \
     make -j 4 linux-amd64 && \
-    upx --ultra-brute -qq /src/go-shadowsocks2/bin/shadowsocks2-linux
+    upx --ultra-brute -qq /src/go-shadowsocks2/bin/shadowsocks2-linux-amd64
 
 ###############################################################################
 # PACKAGE STAGE
@@ -26,7 +26,7 @@ RUN set -x && \
 FROM scratch
 #
 COPY --from=0 /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
-COPY --from=0 /src/go-shadowsocks2/bin/shadowsocks2-linux /shadowsocks
+COPY --from=0 /src/go-shadowsocks2/bin/shadowsocks2-linux-amd64 /shadowsocks
 #
 VOLUME ["/cfg"]
 #
