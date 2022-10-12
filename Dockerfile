@@ -4,8 +4,8 @@
 #
 FROM golang:1.19-alpine
 #
-RUN set -x && \
-    apk --no-cache --update add \
+# RUN set -x && \
+RUN apk --no-cache --update add \
     bash \
     ca-certificates \
     curl \
